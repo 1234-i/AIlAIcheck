@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  lint-compile-test:
+    runs-on: ubuntu-latest
+    env:
+      LLM_MODE: mock
+      DATABASE_URL: sqlite:///./ci.db
+      STORAGE_BACKEND: local
+      LOCAL_STORAGE_PATH: ./.ci_storage
+      PIP_INDEX_URL: https://pypi.org/simple
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Lint
+        run: make lint
+
+      - name: Compile check
+        run: make compile-check
+
+      - name: Pytest (all)
+        run: make test
+
+      - name: Integration test (mock mode)
+        run: make test-integration
+
+      - name: Stage release gate check
+        run: make stage-release-check

@@ -1,0 +1,1115 @@
+{
+  "run_meta": {
+    "stage": "all",
+    "mode_requested": "gemini",
+    "batch_id": "e926dc3f-8c0a-4f8e-b435-974c5cdad776",
+    "database_url": "sqlite:///./hse_audit_eval_v1_real_fast.db",
+    "selected_file_count": 8,
+    "cache_enabled": true,
+    "cache_dir": "./.cache/llm_results",
+    "classify_concurrency": 4,
+    "extract_concurrency": 3,
+    "provider_signature": "GeminiProvider:official:gemini-3.1-flash-lite-preview",
+    "prompt_version": "pilot-v1.0.5",
+    "pipeline_version": "pipeline-v2.3.0"
+  },
+  "doc_type_alias_mapping": {
+    "construction_contract": "construction_contract",
+    "personnel_qualification_review_form": "personnel_qualification_review_form",
+    "entry_permit": "entry_permit",
+    "safety_education_training_record": "safety_education_training_record",
+    "jsa": "jsa",
+    "hse_guidance": "hse_guidance",
+    "hse_plan": "hse_plan",
+    "medical_exam": "medical_exam",
+    "insurance": "insurance",
+    "equipment_inspection": "equipment_inspection",
+    "material_inspection": "material_inspection",
+    "emergency_plan": "emergency_plan",
+    "emergency_drill_plan": "emergency_drill_plan",
+    "emergency_drill_record": "emergency_drill_record",
+    "hse_commitment": "hse_commitment",
+    "all_staff_commitment": "all_staff_commitment",
+    "regulation": "regulation",
+    "commencement_report": "commencement_report",
+    "construction_plan": "construction_plan",
+    "labor_contract": "labor_contract",
+    "training_record": "training_record",
+    "training_material": "training_material",
+    "technical_briefing": "technical_briefing",
+    "exam_record": "exam_record",
+    "contractor_certificate": "contractor_certificate",
+    "access_assessment": "access_assessment",
+    "qualification_review_record": "qualification_review_record",
+    "appointment_letter": "appointment_letter",
+    "qualification_form": "qualification_form",
+    "key_role_form": "key_role_form",
+    "social_security": "social_security",
+    "contract": "construction_contract",
+    "constructioncontract": "construction_contract",
+    "qualification_review_form": "personnel_qualification_review_form",
+    "personnel_qualification": "personnel_qualification_review_form",
+    "personnelqualificationreviewform": "personnel_qualification_review_form",
+    "permit": "entry_permit",
+    "entrypermit": "entry_permit",
+    "training": "safety_education_training_record",
+    "training_records": "safety_education_training_record",
+    "safety_training_record": "safety_education_training_record",
+    "job_safety_analysis": "jsa",
+    "jobsafetyanalysis": "jsa",
+    "hse_instruction": "hse_guidance",
+    "hse_work_guidance": "hse_guidance",
+    "hse_work_plan": "hse_plan",
+    "health_exam": "medical_exam",
+    "medicalexamination": "medical_exam",
+    "work_injury_insurance": "insurance",
+    "equipment_report": "equipment_inspection",
+    "equipment_check": "equipment_inspection",
+    "material_report": "material_inspection",
+    "material_check": "material_inspection",
+    "emergency_response_plan": "emergency_plan",
+    "drill_plan": "emergency_drill_plan",
+    "drill_record": "emergency_drill_record",
+    "hse_promise": "hse_commitment",
+    "all_staff_hse_commitment": "all_staff_commitment",
+    "policy_regulation": "regulation",
+    "start_report": "commencement_report",
+    "organization_plan": "construction_plan",
+    "work_plan": "construction_plan",
+    "certificate": "contractor_certificate",
+    "access_assessment_form": "access_assessment",
+    "qualification_review": "qualification_review_record",
+    "appointment": "appointment_letter",
+    "key_role_review": "key_role_form",
+    "social_insurance": "social_security",
+    "social_security_record": "social_security",
+    "施工合同": "construction_contract",
+    "人员资质报审表": "personnel_qualification_review_form",
+    "资质报审": "personnel_qualification_review_form",
+    "入场许可证": "entry_permit",
+    "作业许可证": "entry_permit",
+    "安全教育培训": "safety_education_training_record",
+    "作业安全分析": "jsa",
+    "作业指导书": "hse_guidance",
+    "操作规程": "hse_guidance",
+    "作业计划书": "hse_plan",
+    "体检": "medical_exam",
+    "保险": "insurance",
+    "机具报验": "equipment_inspection",
+    "设备报验": "equipment_inspection",
+    "材料报验": "material_inspection",
+    "应急预案": "emergency_plan",
+    "应急演练计划": "emergency_drill_plan",
+    "应急演练记录": "emergency_drill_record",
+    "hse承诺书": "hse_commitment",
+    "全员安全承诺书": "all_staff_commitment",
+    "监督管理规定": "regulation",
+    "开工报告": "commencement_report",
+    "施工组织设计": "construction_plan",
+    "劳动合同": "labor_contract",
+    "安全教育记录": "safety_education_training_record",
+    "培训资料": "training_material",
+    "安全技术交底": "technical_briefing",
+    "考试卷": "exam_record",
+    "合格证": "contractor_certificate",
+    "准入评估表": "access_assessment",
+    "资质审查记录": "qualification_review_record",
+    "任命书": "appointment_letter",
+    "关键岗位人员报审表": "key_role_form",
+    "社保": "social_security"
+  },
+  "pipeline_capabilities": {
+    "large_file_key_page_doc_types": [
+      "construction_plan",
+      "emergency_drill_plan",
+      "emergency_drill_record",
+      "emergency_plan",
+      "equipment_inspection",
+      "hse_guidance",
+      "hse_plan",
+      "insurance",
+      "material_inspection",
+      "medical_exam"
+    ],
+    "supports_incremental_filters": [
+      "files",
+      "doc_types",
+      "only_failed",
+      "only_timeout"
+    ],
+    "supports_two_stage": [
+      "extract",
+      "evaluate"
+    ]
+  },
+  "classification_distribution": {
+    "labor_contract": 1,
+    "jsa": 1,
+    "equipment_inspection": 1,
+    "material_inspection": 1,
+    "construction_contract": 1,
+    "emergency_plan": 1,
+    "entry_permit": 1,
+    "construction_plan": 1
+  },
+  "counts": {
+    "unsupported_document": 0,
+    "classification_error": 0,
+    "missing_required_field": 9,
+    "missing_required_field_by_schema": 9,
+    "filename_only_fallback": 1,
+    "extraction_empty": 3,
+    "cache_hit": 7,
+    "official_cache_hit": 2
+  },
+  "extraction": {
+    "overall_field_accuracy": 0.0,
+    "by_doc_type": {
+      "qualification_form": {
+        "file_count": 1,
+        "fields_total": 1,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "jsa": {
+        "file_count": 1,
+        "fields_total": 4,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "equipment_inspection": {
+        "file_count": 1,
+        "fields_total": 3,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "material_inspection": {
+        "file_count": 1,
+        "fields_total": 3,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "contract": {
+        "file_count": 1,
+        "fields_total": 5,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "emergency_plan": {
+        "file_count": 1,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "entry_permit": {
+        "file_count": 1,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "construction_plan": {
+        "file_count": 1,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      }
+    },
+    "by_key_field": {
+      "auditor": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "author": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "contract_price": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "date": {
+        "total": 3,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "emergency_materials": {
+        "total": 2,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "equipment": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "equipment_plan": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "hazards_identified": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "identified_risks": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "key_personnel": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "materials": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "party_a": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "party_b": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "permit_count": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "permitted_personnel": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "personnel_details": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "project_scope": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "signed_by": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "task_description": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      }
+    },
+    "file_details": [
+      {
+        "file_name": "4.1、人员资质报审表（证书+劳动合同）.pdf",
+        "gold_doc_type": "qualification_form",
+        "actual_doc_type": "labor_contract",
+        "field_accuracy": 0.0,
+        "fields_total": 1,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "personnel_details",
+            "expected": [
+              {
+                "name": "卢海亮",
+                "role": "建造师/项目经理"
+              },
+              {
+                "name": "司艳会",
+                "role": "技术负责人"
+              },
+              {
+                "name": "赵艳辉",
+                "role": "质量员"
+              },
+              {
+                "name": "笪丽伟",
+                "role": "专职安全员"
+              },
+              {
+                "name": "彭涛",
+                "role": "现场负责人"
+              },
+              {
+                "name": "聂建斌",
+                "role": "现场监护人"
+              },
+              {
+                "name": "杨帆",
+                "role": "现场监护人"
+              },
+              {
+                "name": "杨晓铭",
+                "role": "现场监护人"
+              },
+              {
+                "name": "张发跃",
+                "role": "现场监护人"
+              }
+            ],
+            "actual": null
+          }
+        ],
+        "extraction_errors": [
+          "cache_hit: extraction"
+        ],
+        "observability": {
+          "provider_selected": "official",
+          "provider_route_reason": "file_size_over_threshold",
+          "provider_escalated": false,
+          "provider_escalation_reason": null,
+          "file_size_bytes": 28209108,
+          "file_size_mb": 26.9023,
+          "page_count": 100,
+          "key_page_strategy_used": false,
+          "filename_only_fallback_used": false,
+          "raw_response_status": "http_200",
+          "parse_error_category": null,
+          "extraction_empty_reason": null,
+          "timeout_retry_count": 0,
+          "cache_hit": true,
+          "cache_source_provider": "official",
+          "cache_source_model": "gemini-3.1-flash-lite-preview",
+          "cache_created_at": "2026-03-15T08:07:14.094020",
+          "file_hash": "2a5bb9010ef075c93d2f5e450fbc622ce39de0fe56f56a919381b6720cea1772",
+          "model_name": "gemini-3.1-flash-lite-preview",
+          "model_selected": "gemini-3.1-flash-lite-preview",
+          "prompt_version": "pilot-v1.0.5",
+          "schema_version": "1.2.0",
+          "pipeline_version": "pipeline-v2.3.0",
+          "value_tier": "medium",
+          "extraction_strategy": "light",
+          "cache_signature": "GeminiProvider:official:gemini-3.1-flash-lite-preview"
+        }
+      },
+      {
+        "file_name": "作业安全分析表.pdf",
+        "gold_doc_type": "jsa",
+        "actual_doc_type": "jsa",
+        "field_accuracy": 0.0,
+        "fields_total": 4,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "task_description",
+            "expected": "巡检便道共计:33处、巡检便桥共计:28处施工",
+            "actual": null
+          },
+          {
+            "field": "identified_risks",
+            "expected": [
+              "高处坠落、滑倒摔擦",
+              "车辆侧翻",
+              "便桥搭建: 溺水、起重伤害、结构坍塌",
+              "环境污染"
+            ],
+            "actual": null
+          },
+          {
+            "field": "author",
+            "expected": "张发跃",
+            "actual": null
+          },
+          {
+            "field": "date",
+            "expected": "2025年11月6日",
+            "actual": null
+          }
+        ],
+        "extraction_errors": [
+          "missing required field: hazards",
+          "missing required field: controls",
+          "missing required field by schema: controls",
+          "missing required field by schema: hazards",
+          "cache_hit: extraction"
+        ],
+        "observability": {
+          "provider_selected": "relay",
+          "provider_route_reason": "default_cost_priority",
+          "provider_escalated": false,
+          "provider_escalation_reason": null,
+          "file_size_bytes": 227636,
+          "file_size_mb": 0.2171,
+          "page_count": 2,
+          "key_page_strategy_used": false,
+          "filename_only_fallback_used": false,
+          "raw_response_status": "http_200",
+          "parse_error_category": null,
+          "extraction_empty_reason": "llm_empty_then_fallback_empty",
+          "timeout_retry_count": 0,
+          "cache_hit": true,
+          "cache_source_provider": "relay",
+          "cache_source_model": "gemini-3.1-pro-preview",
+          "cache_created_at": "2026-03-15T08:07:14.251422",
+          "file_hash": "85cb682ac5d6476d78fe0c13a57408f6e233b8be3d97282f194c45e80e5d5ca8",
+          "model_name": "gemini-3.1-pro-preview",
+          "model_selected": "gemini-3.1-pro-preview",
+          "prompt_version": "pilot-v1.0.5",
+          "schema_version": "1.2.0",
+          "pipeline_version": "pipeline-v2.3.0",
+          "value_tier": "high",
+          "extraction_strategy": "strong",
+          "cache_signature": "GeminiProvider:relay:gemini-3.1-pro-preview"
+        }
+      },
+      {
+        "file_name": "入场机具报验表.pdf",
+        "gold_doc_type": "equipment_inspection",
+        "actual_doc_type": "equipment_inspection",
+        "field_accuracy": 0.0,
+        "fields_total": 3,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "equipment",
+            "expected": [
+              {
+                "name": "汽油机水泵",
+                "qty": 1
+              },
+              {
+                "name": "切割机",
+                "qty": 1
+              },
+              {
+                "name": "锂电振动棒",
+                "qty": 1
+              },
+              {
+                "name": "工程车",
+                "qty": 3
+              }
+            ],
+            "actual": [
+              "入场机具设备"
+            ]
+          },
+          {
+            "field": "auditor",
+            "expected": "张发跃",
+            "actual": null
+          },
+          {
+            "field": "date",
+            "expected": "2025年11月6日",
+            "actual": null
+          }
+        ],
+        "extraction_errors": [
+          "cache_hit: extraction"
+        ],
+        "observability": {
+          "provider_selected": "relay",
+          "provider_route_reason": "default_cost_priority",
+          "provider_escalated": false,
+          "provider_escalation_reason": null,
+          "file_size_bytes": 69768,
+          "file_size_mb": 0.0665,
+          "page_count": 1,
+          "key_page_strategy_used": false,
+          "filename_only_fallback_used": false,
+          "raw_response_status": "http_200",
+          "parse_error_category": null,
+          "extraction_empty_reason": null,
+          "timeout_retry_count": 0,
+          "cache_hit": true,
+          "cache_source_provider": "relay",
+          "cache_source_model": "gemini-3.1-pro-preview",
+          "cache_created_at": "2026-03-15T08:07:14.263098",
+          "file_hash": "b4595e011eae033450bb270bb7b9dc3bf6deaf5dd62c07fa6fde6e452570da7a",
+          "model_name": "gemini-3.1-pro-preview",
+          "model_selected": "gemini-3.1-pro-preview",
+          "prompt_version": "pilot-v1.0.5",
+          "schema_version": "1.2.0",
+          "pipeline_version": "pipeline-v2.3.0",
+          "value_tier": "high",
+          "extraction_strategy": "strong",
+          "cache_signature": "GeminiProvider:relay:gemini-3.1-pro-preview"
+        }
+      },
+      {
+        "file_name": "工程物资、材料进场报验表.pdf",
+        "gold_doc_type": "material_inspection",
+        "actual_doc_type": "material_inspection",
+        "field_accuracy": 0.0,
+        "fields_total": 3,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "materials",
+            "expected": [
+              "便道C20混凝土",
+              "截水沟C25混凝土",
+              "模板面积",
+              "管道桩",
+              "警示牌",
+              "安全帽",
+              "劳保服装",
+              "劳保手套",
+              "灭火器",
+              "急救箱"
+            ],
+            "actual": [
+              "工程物资材料"
+            ]
+          },
+          {
+            "field": "signed_by",
+            "expected": "司艳会",
+            "actual": null
+          },
+          {
+            "field": "date",
+            "expected": "2025年10月20日",
+            "actual": null
+          }
+        ],
+        "extraction_errors": [],
+        "observability": {
+          "provider_selected": "official",
+          "provider_route_reason": "default_cost_priority",
+          "provider_escalated": true,
+          "provider_escalation_reason": "transport_error",
+          "file_size_bytes": 520904,
+          "file_size_mb": 0.4968,
+          "page_count": 1,
+          "key_page_strategy_used": false,
+          "filename_only_fallback_used": false,
+          "raw_response_status": "http_200",
+          "parse_error_category": null,
+          "extraction_empty_reason": null,
+          "timeout_retry_count": 0,
+          "cache_hit": false,
+          "cache_source_provider": null,
+          "cache_source_model": null,
+          "cache_created_at": "2026-03-15T08:09:34.271040",
+          "file_hash": "3d7217328c3fe49897ce9f52390eff8a05795cef1b31fa9bd4b706803505ec67",
+          "model_name": "gemini-3.1-flash-lite-preview",
+          "model_selected": "gemini-3.1-flash-lite-preview",
+          "prompt_version": "pilot-v1.0.5",
+          "schema_version": "1.2.0",
+          "pipeline_version": "pipeline-v2.3.0",
+          "value_tier": "high",
+          "extraction_strategy": "strong"
+        }
+      },
+      {
+        "file_name": "广西公司2025年巡线便道修建项目(标段二)（华南公司）施工合同.pdf",
+        "gold_doc_type": "contract",
+        "actual_doc_type": "construction_contract",
+        "field_accuracy": 0.0,
+        "fields_total": 5,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "party_a",
+            "expected": "国家石油天然气管网集团有限公司华南分公司",
+            "actual": null
+          },
+          {
+            "field": "party_b",
+            "expected": "河北燕青建工集团有限公司",
+            "actual": null
+          },
+          {
+            "field": "contract_price",
+            "expected": "3007679.39",
+            "actual": null
+          },
+          {
+            "field": "key_personnel",
+            "expected": [
+              "卢海亮",
+              "司艳会",
+              "笪丽伟",
+              "王勇方",
+              "郎国超",
+              "陈佳楠",
+              "梁家宁",
+              "冯大蕊",
+              "刘福静",
+              "寇志强",
+              "杨喜忠",
+              "赵艳辉"
+            ],
+            "actual": null
+          },
+          {
+            "field": "equipment_plan",
+            "expected": [
+              "发电机(10kw柴油发电机)",
+              "抽水泵"
+            ],
+            "actual": null
+          }
+        ],
+        "extraction_errors": [
+          "missing required field: project_name",
+          "missing required field: contract_no",
+          "missing required field: effective_date",
+          "missing required field by schema: contract_no",
+          "missing required field by schema: project_name",
+          "missing required field by schema: effective_date",
+          "cache_hit: extraction"
+        ],
+        "observability": {
+          "provider_selected": "local_filename_fallback",
+          "provider_route_reason": "large_pdf_guardrail_under_provider_threshold",
+          "provider_escalated": false,
+          "provider_escalation_reason": null,
+          "file_size_bytes": 6347244,
+          "file_size_mb": 6.0532,
+          "page_count": 96,
+          "key_page_strategy_used": false,
+          "filename_only_fallback_used": true,
+          "raw_response_status": "local_filename_fallback",
+          "parse_error_category": null,
+          "extraction_empty_reason": "filename_only_fallback_empty",
+          "timeout_retry_count": 0,
+          "cache_hit": true,
+          "cache_source_provider": "local_filename_fallback",
+          "cache_source_model": null,
+          "cache_created_at": "2026-03-15T08:07:14.285855",
+          "file_hash": "86d4a5b5459eb50561c100ec1f171e97fb9cff3c97858f681b1994639fb5d44b",
+          "model_name": null,
+          "model_selected": null,
+          "prompt_version": "pilot-v1.0.5",
+          "schema_version": "1.2.0",
+          "pipeline_version": "pipeline-v2.3.0",
+          "value_tier": "high",
+          "extraction_strategy": "strong",
+          "cache_signature": "GeminiProvider:official:gemini-3.1-flash-lite-preview"
+        }
+      },
+      {
+        "file_name": "应急预案.pdf",
+        "gold_doc_type": "emergency_plan",
+        "actual_doc_type": "emergency_plan",
+        "field_accuracy": 0.0,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "hazards_identified",
+            "expected": [
+              "人身伤害",
+              "设备故障",
+              "环境污染"
+            ],
+            "actual": [
+              "应急场景风险"
+            ]
+          },
+          {
+            "field": "emergency_materials",
+            "expected": [
+              "退烧药",
+              "碘酊",
+              "云南白药",
+              "创口贴",
+              "温度计"
+            ],
+            "actual": [
+              "碘酊",
+              "云南白药",
+              "创口贴",
+              "温度计"
+            ]
+          }
+        ],
+        "extraction_errors": [
+          "cache_hit: extraction"
+        ],
+        "observability": {
+          "provider_selected": "relay",
+          "provider_route_reason": "default_cost_priority",
+          "provider_escalated": false,
+          "provider_escalation_reason": null,
+          "file_size_bytes": 1241924,
+          "file_size_mb": 1.1844,
+          "page_count": 19,
+          "key_page_strategy_used": false,
+          "filename_only_fallback_used": false,
+          "raw_response_status": "http_200",
+          "parse_error_category": null,
+          "extraction_empty_reason": null,
+          "timeout_retry_count": 0,
+          "cache_hit": true,
+          "cache_source_provider": "relay",
+          "cache_source_model": "gemini-3.1-pro-preview",
+          "cache_created_at": "2026-03-15T08:07:14.304521",
+          "file_hash": "1c6189b4fbf0802e84bcd0a8dfa9d4a7b23d9a0086a23ebcddc63e953885fe76",
+          "model_name": "gemini-3.1-pro-preview",
+          "model_selected": "gemini-3.1-pro-preview",
+          "prompt_version": "pilot-v1.0.5",
+          "schema_version": "1.2.0",
+          "pipeline_version": "pipeline-v2.3.0",
+          "value_tier": "high",
+          "extraction_strategy": "strong",
+          "cache_signature": "GeminiProvider:relay:gemini-3.1-pro-preview"
+        }
+      },
+      {
+        "file_name": "承包商员工入场许可证.pdf",
+        "gold_doc_type": "entry_permit",
+        "actual_doc_type": "entry_permit",
+        "field_accuracy": 0.0,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "permitted_personnel",
+            "expected": [
+              "卢海亮",
+              "司艳会",
+              "赵艳辉",
+              "笪丽伟",
+              "彭涛",
+              "王小宇",
+              "韦明宁",
+              "万元富",
+              "万介里",
+              "万元龙",
+              "廖文旺"
+            ],
+            "actual": null
+          },
+          {
+            "field": "permit_count",
+            "expected": 11,
+            "actual": null
+          }
+        ],
+        "extraction_errors": [
+          "missing required field: person_name",
+          "missing required field: role",
+          "missing required field: permit_no",
+          "missing required field: permit_date",
+          "missing required field by schema: role",
+          "missing required field by schema: person_name",
+          "missing required field by schema: permit_date",
+          "missing required field by schema: permit_no",
+          "cache_hit: extraction"
+        ],
+        "observability": {
+          "provider_selected": "official",
+          "provider_route_reason": "default_cost_priority",
+          "provider_escalated": true,
+          "provider_escalation_reason": "extraction_empty_low_confidence",
+          "file_size_bytes": 397397,
+          "file_size_mb": 0.379,
+          "page_count": 11,
+          "key_page_strategy_used": false,
+          "filename_only_fallback_used": false,
+          "raw_response_status": "http_200",
+          "parse_error_category": null,
+          "extraction_empty_reason": "llm_empty_then_fallback_empty",
+          "timeout_retry_count": 0,
+          "cache_hit": true,
+          "cache_source_provider": "official",
+          "cache_source_model": "gemini-3.1-flash-lite-preview",
+          "cache_created_at": "2026-03-15T08:07:14.319100",
+          "file_hash": "4cab8eec6be2968158642f060e09f150285daf8517c1cd35539fe83ace04a683",
+          "model_name": "gemini-3.1-flash-lite-preview",
+          "model_selected": "gemini-3.1-flash-lite-preview",
+          "prompt_version": "pilot-v1.0.5",
+          "schema_version": "1.2.0",
+          "pipeline_version": "pipeline-v2.3.0",
+          "value_tier": "high",
+          "extraction_strategy": "strong",
+          "cache_signature": "GeminiProvider:official:gemini-3.1-flash-lite-preview"
+        }
+      },
+      {
+        "file_name": "施工组织设计方案.pdf",
+        "gold_doc_type": "construction_plan",
+        "actual_doc_type": "construction_plan",
+        "field_accuracy": 0.0,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "project_scope",
+            "expected": "巡线便道7处",
+            "actual": null
+          },
+          {
+            "field": "emergency_materials",
+            "expected": [
+              "医疗药品"
+            ],
+            "actual": [
+              "灭火器",
+              "应急车",
+              "应急药品"
+            ]
+          }
+        ],
+        "extraction_errors": [
+          "cache_hit: extraction"
+        ],
+        "observability": {
+          "provider_selected": "relay",
+          "provider_route_reason": "default_cost_priority",
+          "provider_escalated": false,
+          "provider_escalation_reason": null,
+          "file_size_bytes": 1849592,
+          "file_size_mb": 1.7639,
+          "page_count": 46,
+          "key_page_strategy_used": false,
+          "filename_only_fallback_used": false,
+          "raw_response_status": "http_200",
+          "parse_error_category": null,
+          "extraction_empty_reason": null,
+          "timeout_retry_count": 0,
+          "cache_hit": true,
+          "cache_source_provider": "relay",
+          "cache_source_model": "gemini-3.1-pro-preview",
+          "cache_created_at": "2026-03-15T08:07:14.334369",
+          "file_hash": "4331c19846f3d15661e253aed511d0c927e7264089f9ff346049c6758379be0f",
+          "model_name": "gemini-3.1-pro-preview",
+          "model_selected": "gemini-3.1-pro-preview",
+          "prompt_version": "pilot-v1.0.5",
+          "schema_version": "1.2.0",
+          "pipeline_version": "pipeline-v2.3.0",
+          "value_tier": "high",
+          "extraction_strategy": "strong",
+          "cache_signature": "GeminiProvider:relay:gemini-3.1-pro-preview"
+        }
+      }
+    ]
+  },
+  "audit_assertion_eval": {
+    "expected_should_hit_count": 5,
+    "expected_should_not_hit_count": 8,
+    "actual_issue_count": 10,
+    "mapped_issue_count": 4,
+    "unmapped_issue_count": 8,
+    "precision": 0.3333333333333333,
+    "recall": 0.8,
+    "tp": [
+      "issue.emergency.plan_content_and_materials_inadequate",
+      "issue.equipment.generator_planned_but_not_reported",
+      "issue.personnel.entry_review_documents_missing",
+      "issue.risk.jsa_not_aligned_with_actual_scope"
+    ],
+    "fp_assertion": [],
+    "fn_assertion": [
+      "issue.risk.construction_plan_risk_and_emergency_gaps"
+    ],
+    "per_assertion": [
+      {
+        "assertion_key": "issue.emergency.plan_content_and_materials_inadequate",
+        "expected": "should_hit",
+        "predicted_hit": true,
+        "status": "TP"
+      },
+      {
+        "assertion_key": "issue.equipment.generator_planned_but_not_reported",
+        "expected": "should_hit",
+        "predicted_hit": true,
+        "status": "TP"
+      },
+      {
+        "assertion_key": "issue.personnel.entry_review_documents_missing",
+        "expected": "should_hit",
+        "predicted_hit": true,
+        "status": "TP"
+      },
+      {
+        "assertion_key": "issue.risk.construction_plan_risk_and_emergency_gaps",
+        "expected": "should_hit",
+        "predicted_hit": false,
+        "status": "FN"
+      },
+      {
+        "assertion_key": "issue.risk.jsa_not_aligned_with_actual_scope",
+        "expected": "should_hit",
+        "predicted_hit": true,
+        "status": "TP"
+      },
+      {
+        "assertion_key": "non_issue.contract_and_hse_agreement_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.entry_permit_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.key_role_qualification_and_appointment_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.labor_and_social_security_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.medical_exam_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.training_certificate_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.training_or_briefing_docs_existence_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.work_injury_insurance_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      }
+    ],
+    "assignments": [
+      {
+        "assertion_key": "issue.risk.jsa_not_aligned_with_actual_scope",
+        "issue_id": "ISSUE-006",
+        "actual_rule_id": "R-V2-030",
+        "actual_audit_group": "HSE_RISK_DOCUMENTS",
+        "score": 0.3634,
+        "actual_issue_description": "JSA risk-control mapping is incomplete.",
+        "evidence_files": [
+          "作业安全分析表.pdf"
+        ]
+      },
+      {
+        "assertion_key": "issue.personnel.entry_review_documents_missing",
+        "issue_id": "ISSUE-004",
+        "actual_rule_id": "R-V2-013",
+        "actual_audit_group": "TRAINING_PERMIT_CLOSURE",
+        "score": 0.325,
+        "actual_issue_description": "Permit person name is missing.",
+        "evidence_files": [
+          "承包商员工入场许可证.pdf"
+        ]
+      },
+      {
+        "assertion_key": "issue.emergency.plan_content_and_materials_inadequate",
+        "issue_id": "ISSUE-002",
+        "actual_rule_id": "bridge.fact_trigger",
+        "actual_audit_group": "HSE_RISK_DOCUMENTS",
+        "score": 0.19,
+        "actual_issue_description": "bridge_trigger:emergency_plan_has_hazards_and_materials",
+        "evidence_files": [
+          "应急预案.pdf",
+          "施工组织设计方案.pdf"
+        ],
+        "bridge_trigger": "emergency_plan_has_hazards_and_materials"
+      },
+      {
+        "assertion_key": "issue.equipment.generator_planned_but_not_reported",
+        "issue_id": "ISSUE-003",
+        "actual_rule_id": "bridge.fact_trigger",
+        "actual_audit_group": "EQUIPMENT_TOOLS_MATERIALS",
+        "score": 0.19,
+        "actual_issue_description": "bridge_trigger:generator_planned_not_reported",
+        "evidence_files": [
+          "入场机具报验表.pdf",
+          "广西公司2025年巡线便道修建项目(标段二)（华南公司）施工合同.pdf",
+          "施工组织设计方案.pdf"
+        ],
+        "bridge_trigger": "generator_planned_not_reported"
+      }
+    ],
+    "top_unmapped_actual_issues": [
+      {
+        "rule_id": "R-V2-002",
+        "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+        "issue_description": "Personnel qualification form is missing.",
+        "evidence_files": [
+          "应急预案.pdf"
+        ]
+      },
+      {
+        "rule_id": "R-V2-004",
+        "audit_group": "TRAINING_PERMIT_CLOSURE",
+        "issue_description": "Training record is missing.",
+        "evidence_files": [
+          "应急预案.pdf"
+        ]
+      },
+      {
+        "rule_id": "R-V2-006",
+        "audit_group": "PROJECT_ADMISSION_LEGAL",
+        "issue_description": "Contract number is missing.",
+        "evidence_files": [
+          "广西公司2025年巡线便道修建项目(标段二)（华南公司）施工合同.pdf"
+        ]
+      },
+      {
+        "rule_id": "R-V2-007",
+        "audit_group": "PROJECT_ADMISSION_LEGAL",
+        "issue_description": "Contract project name is missing.",
+        "evidence_files": [
+          "广西公司2025年巡线便道修建项目(标段二)（华南公司）施工合同.pdf"
+        ]
+      },
+      {
+        "rule_id": "R-V2-014",
+        "audit_group": "TRAINING_PERMIT_CLOSURE",
+        "issue_description": "Permit ID number is missing.",
+        "evidence_files": [
+          "承包商员工入场许可证.pdf"
+        ]
+      },
+      {
+        "rule_id": "R-V2-015",
+        "audit_group": "TRAINING_PERMIT_CLOSURE",
+        "issue_description": "Permit role is missing.",
+        "evidence_files": [
+          "承包商员工入场许可证.pdf"
+        ]
+      },
+      {
+        "rule_id": "R-V2-016",
+        "audit_group": "TRAINING_PERMIT_CLOSURE",
+        "issue_description": "Permit number is missing.",
+        "evidence_files": [
+          "承包商员工入场许可证.pdf"
+        ]
+      },
+      {
+        "rule_id": "R-V2-017",
+        "audit_group": "TRAINING_PERMIT_CLOSURE",
+        "issue_description": "Permit date is missing.",
+        "evidence_files": [
+          "承包商员工入场许可证.pdf"
+        ]
+      }
+    ]
+  },
+  "top_false_positives": [],
+  "top_false_negatives": [
+    "issue.risk.construction_plan_risk_and_emergency_gaps"
+  ]
+}

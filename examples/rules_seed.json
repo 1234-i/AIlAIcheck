@@ -1,0 +1,553 @@
+[
+  {
+    "rule_id": "R-V2-001",
+    "clause_id": "CL-V2-001",
+    "rule_name": "Contract present",
+    "audit_group": "PROJECT_ADMISSION_LEGAL",
+    "audit_object": "Document Package",
+    "checkpoint": "Construction contract exists",
+    "evidence_required": 1,
+    "logic_type": "require_doc_type",
+    "severity": "HIGH",
+    "issue_template": "Construction contract is missing.",
+    "rectification_template": "Upload construction contract.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "required_doc_type": "construction_contract"
+    }
+  },
+  {
+    "rule_id": "R-V2-002",
+    "clause_id": "CL-V2-002",
+    "rule_name": "Qualification form present",
+    "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+    "audit_object": "Personnel Package",
+    "checkpoint": "Qualification form exists",
+    "evidence_required": 1,
+    "logic_type": "require_doc_type",
+    "severity": "HIGH",
+    "issue_template": "Personnel qualification form is missing.",
+    "rectification_template": "Upload qualification form.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "required_doc_type": "personnel_qualification_review_form"
+    }
+  },
+  {
+    "rule_id": "R-V2-003",
+    "clause_id": "CL-V2-003",
+    "rule_name": "Entry permit present",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Permit Package",
+    "checkpoint": "Entry permit exists",
+    "evidence_required": 1,
+    "logic_type": "require_doc_type",
+    "severity": "HIGH",
+    "issue_template": "Entry permit is missing.",
+    "rectification_template": "Upload entry permit.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "required_doc_type": "entry_permit"
+    }
+  },
+  {
+    "rule_id": "R-V2-004",
+    "clause_id": "CL-V2-004",
+    "rule_name": "Training record present",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Training Package",
+    "checkpoint": "Training record exists",
+    "evidence_required": 1,
+    "logic_type": "require_doc_type",
+    "severity": "MEDIUM",
+    "issue_template": "Training record is missing.",
+    "rectification_template": "Upload training record.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "required_doc_type": "safety_education_training_record"
+    }
+  },
+  {
+    "rule_id": "R-V2-005",
+    "clause_id": "CL-V2-005",
+    "rule_name": "JSA present",
+    "audit_group": "HSE_RISK_DOCUMENTS",
+    "audit_object": "Risk Package",
+    "checkpoint": "JSA exists",
+    "evidence_required": 1,
+    "logic_type": "require_doc_type",
+    "severity": "LOW",
+    "issue_template": "JSA document is missing.",
+    "rectification_template": "Upload JSA document.",
+    "enabled": false,
+    "version": "2.0.0",
+    "params": {
+      "required_doc_type": "jsa"
+    }
+  },
+  {
+    "rule_id": "R-V2-006",
+    "clause_id": "CL-V2-006",
+    "rule_name": "Contract number required",
+    "audit_group": "PROJECT_ADMISSION_LEGAL",
+    "audit_object": "Construction Contract",
+    "checkpoint": "Contract no. not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Contract number is missing.",
+    "rectification_template": "Fill contract number.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "construction_contract",
+      "field_name": "contract_no"
+    }
+  },
+  {
+    "rule_id": "R-V2-007",
+    "clause_id": "CL-V2-007",
+    "rule_name": "Contract project name required",
+    "audit_group": "PROJECT_ADMISSION_LEGAL",
+    "audit_object": "Construction Contract",
+    "checkpoint": "Project name not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Contract project name is missing.",
+    "rectification_template": "Fill project name in contract.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "construction_contract",
+      "field_name": "project_name"
+    }
+  },
+  {
+    "rule_id": "R-V2-008",
+    "clause_id": "CL-V2-008",
+    "rule_name": "Qualification person name required",
+    "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+    "audit_object": "Qualification Form",
+    "checkpoint": "Person name not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Qualification person name is missing.",
+    "rectification_template": "Fill person name in qualification form.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "personnel_qualification_review_form",
+      "field_name": "person_name"
+    }
+  },
+  {
+    "rule_id": "R-V2-009",
+    "clause_id": "CL-V2-009",
+    "rule_name": "Qualification ID required",
+    "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+    "audit_object": "Qualification Form",
+    "checkpoint": "ID number not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Qualification ID is missing.",
+    "rectification_template": "Fill ID number in qualification form.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "personnel_qualification_review_form",
+      "field_name": "id_no"
+    }
+  },
+  {
+    "rule_id": "R-V2-010",
+    "clause_id": "CL-V2-010",
+    "rule_name": "Qualification role required",
+    "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+    "audit_object": "Qualification Form",
+    "checkpoint": "Role not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "Qualification role is missing.",
+    "rectification_template": "Fill role in qualification form.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "personnel_qualification_review_form",
+      "field_name": "role"
+    }
+  },
+  {
+    "rule_id": "R-V2-011",
+    "clause_id": "CL-V2-011",
+    "rule_name": "Qualification certificate required",
+    "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+    "audit_object": "Qualification Form",
+    "checkpoint": "Certificate number not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Qualification certificate number is missing.",
+    "rectification_template": "Fill certificate number.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "personnel_qualification_review_form",
+      "field_name": "certificate_no"
+    }
+  },
+  {
+    "rule_id": "R-V2-012",
+    "clause_id": "CL-V2-012",
+    "rule_name": "Qualification validity required",
+    "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+    "audit_object": "Qualification Form",
+    "checkpoint": "Certificate valid-until not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "Qualification certificate validity date is missing.",
+    "rectification_template": "Fill certificate validity date.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "personnel_qualification_review_form",
+      "field_name": "certificate_valid_until"
+    }
+  },
+  {
+    "rule_id": "R-V2-013",
+    "clause_id": "CL-V2-013",
+    "rule_name": "Permit person name required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Entry Permit",
+    "checkpoint": "Person name not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Permit person name is missing.",
+    "rectification_template": "Fill person name in permit.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "entry_permit",
+      "field_name": "person_name"
+    }
+  },
+  {
+    "rule_id": "R-V2-014",
+    "clause_id": "CL-V2-014",
+    "rule_name": "Permit ID required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Entry Permit",
+    "checkpoint": "ID number not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Permit ID number is missing.",
+    "rectification_template": "Fill ID number in permit.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "entry_permit",
+      "field_name": "id_no"
+    }
+  },
+  {
+    "rule_id": "R-V2-015",
+    "clause_id": "CL-V2-015",
+    "rule_name": "Permit role required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Entry Permit",
+    "checkpoint": "Role not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "Permit role is missing.",
+    "rectification_template": "Fill role in permit.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "entry_permit",
+      "field_name": "role"
+    }
+  },
+  {
+    "rule_id": "R-V2-016",
+    "clause_id": "CL-V2-016",
+    "rule_name": "Permit number required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Entry Permit",
+    "checkpoint": "Permit number not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Permit number is missing.",
+    "rectification_template": "Fill permit number.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "entry_permit",
+      "field_name": "permit_no"
+    }
+  },
+  {
+    "rule_id": "R-V2-017",
+    "clause_id": "CL-V2-017",
+    "rule_name": "Permit date required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Entry Permit",
+    "checkpoint": "Permit date not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "Permit date is missing.",
+    "rectification_template": "Fill permit date.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "entry_permit",
+      "field_name": "permit_date"
+    }
+  },
+  {
+    "rule_id": "R-V2-018",
+    "clause_id": "CL-V2-018",
+    "rule_name": "Training person name required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Training Record",
+    "checkpoint": "Person name not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Training person name is missing.",
+    "rectification_template": "Fill person name in training record.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "safety_education_training_record",
+      "field_name": "person_name"
+    }
+  },
+  {
+    "rule_id": "R-V2-019",
+    "clause_id": "CL-V2-019",
+    "rule_name": "Training ID required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Training Record",
+    "checkpoint": "ID number not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "Training ID number is missing.",
+    "rectification_template": "Fill ID number in training record.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "safety_education_training_record",
+      "field_name": "id_no"
+    }
+  },
+  {
+    "rule_id": "R-V2-020",
+    "clause_id": "CL-V2-020",
+    "rule_name": "Training date required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Training Record",
+    "checkpoint": "Training date not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "Training date is missing.",
+    "rectification_template": "Fill training date.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "safety_education_training_record",
+      "field_name": "training_date"
+    }
+  },
+  {
+    "rule_id": "R-V2-021",
+    "clause_id": "CL-V2-021",
+    "rule_name": "Training trainer required",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Training Record",
+    "checkpoint": "Trainer not empty",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "LOW",
+    "issue_template": "Trainer name is missing.",
+    "rectification_template": "Fill trainer name.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "safety_education_training_record",
+      "field_name": "trainer"
+    }
+  },
+  {
+    "rule_id": "R-V2-022",
+    "clause_id": "CL-V2-022",
+    "rule_name": "Qualification not expired",
+    "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+    "audit_object": "Qualification Form",
+    "checkpoint": "Certificate date valid",
+    "evidence_required": 1,
+    "logic_type": "date_not_expired",
+    "severity": "HIGH",
+    "issue_template": "Qualification certificate is expired.",
+    "rectification_template": "Provide valid certificate.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "doc_type": "personnel_qualification_review_form",
+      "field_name": "certificate_valid_until"
+    }
+  },
+  {
+    "rule_id": "R-V2-023",
+    "clause_id": "CL-V2-023",
+    "rule_name": "Training before permit",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Timeline",
+    "checkpoint": "Training date should not be after permit date",
+    "evidence_required": 1,
+    "logic_type": "date_order",
+    "severity": "MEDIUM",
+    "issue_template": "Training date is later than permit date.",
+    "rectification_template": "Ensure training completed before permit issuance.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "first_doc_type": "safety_education_training_record",
+      "first_field": "training_date",
+      "second_doc_type": "entry_permit",
+      "second_field": "permit_date"
+    }
+  },
+  {
+    "rule_id": "R-V2-024",
+    "clause_id": "CL-V2-024",
+    "rule_name": "Permit after contract effective date",
+    "audit_group": "PROJECT_ADMISSION_LEGAL",
+    "audit_object": "Timeline",
+    "checkpoint": "Contract effective date should not be later than permit date",
+    "evidence_required": 1,
+    "logic_type": "date_order",
+    "severity": "MEDIUM",
+    "issue_template": "Permit date occurs before contract effective date.",
+    "rectification_template": "Align permit timeline with contract effective date.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {
+      "first_doc_type": "construction_contract",
+      "first_field": "effective_date",
+      "second_doc_type": "entry_permit",
+      "second_field": "permit_date"
+    }
+  },
+  {
+    "rule_id": "R-V2-025",
+    "clause_id": "CL-V2-025",
+    "rule_name": "Role consistency cross-doc",
+    "audit_group": "CROSS_DOCUMENT_CONFLICT_SCAN",
+    "audit_object": "Person Role",
+    "checkpoint": "Qualification role equals permit role",
+    "evidence_required": 1,
+    "logic_type": "person_role_consistency",
+    "severity": "HIGH",
+    "issue_template": "Person role mismatch between qualification and permit.",
+    "rectification_template": "Unify role across documents.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {}
+  },
+  {
+    "rule_id": "R-V2-026",
+    "clause_id": "CL-V2-026",
+    "rule_name": "Permit-training closure",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Personnel Chain",
+    "checkpoint": "Permit holder must have training record",
+    "evidence_required": 1,
+    "logic_type": "person_training_closure",
+    "severity": "HIGH",
+    "issue_template": "Permit holder has no training record.",
+    "rectification_template": "Add matching training record.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {}
+  },
+  {
+    "rule_id": "R-V2-027",
+    "clause_id": "CL-V2-027",
+    "rule_name": "Project name consistency",
+    "audit_group": "CROSS_DOCUMENT_CONFLICT_SCAN",
+    "audit_object": "Project Identity",
+    "checkpoint": "Project name is consistent",
+    "evidence_required": 1,
+    "logic_type": "project_name_consistency",
+    "severity": "MEDIUM",
+    "issue_template": "Project name inconsistency detected.",
+    "rectification_template": "Align project name across files.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {}
+  },
+  {
+    "rule_id": "R-V2-028",
+    "clause_id": "CL-V2-028",
+    "rule_name": "Contractor name consistency",
+    "audit_group": "CROSS_DOCUMENT_CONFLICT_SCAN",
+    "audit_object": "Contractor Identity",
+    "checkpoint": "Contractor name is consistent",
+    "evidence_required": 1,
+    "logic_type": "contractor_name_consistency",
+    "severity": "MEDIUM",
+    "issue_template": "Contractor name inconsistency detected.",
+    "rectification_template": "Align contractor name across files.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {}
+  },
+  {
+    "rule_id": "R-V2-029",
+    "clause_id": "CL-V2-029",
+    "rule_name": "Personnel chain completeness",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "Personnel Chain",
+    "checkpoint": "Qualification->Permit->Training chain complete",
+    "evidence_required": 1,
+    "logic_type": "person_chain_missing_links",
+    "severity": "MEDIUM",
+    "issue_template": "Personnel chain has missing links.",
+    "rectification_template": "Close missing chain links.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {}
+  },
+  {
+    "rule_id": "R-V2-030",
+    "clause_id": "CL-V2-030",
+    "rule_name": "JSA risk-control completeness",
+    "audit_group": "HSE_RISK_DOCUMENTS",
+    "audit_object": "JSA",
+    "checkpoint": "Each hazard has adequate controls",
+    "evidence_required": 1,
+    "logic_type": "jsa_control_completeness",
+    "severity": "MEDIUM",
+    "issue_template": "JSA risk-control mapping is incomplete.",
+    "rectification_template": "Complete control measures for all hazards.",
+    "enabled": true,
+    "version": "2.0.0",
+    "params": {}
+  }
+]

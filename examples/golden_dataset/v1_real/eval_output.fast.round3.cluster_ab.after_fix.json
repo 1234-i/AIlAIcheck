@@ -1,0 +1,713 @@
+{
+  "run_meta": {
+    "stage": "all",
+    "mode_requested": "gemini",
+    "batch_id": "ecc1bcbc-26ac-4072-8af8-4790220c9e43",
+    "database_url": "sqlite:///./hse_audit_eval_v1_real_fast.db",
+    "selected_file_count": 7,
+    "cache_enabled": true,
+    "cache_dir": "./.cache/llm_results",
+    "classify_concurrency": 4,
+    "extract_concurrency": 3,
+    "provider_signature": "GeminiProvider:gemini-3.1-pro-preview",
+    "prompt_version": "pilot-v1.0.1",
+    "pipeline_version": "pipeline-v2.2.0"
+  },
+  "doc_type_alias_mapping": {
+    "construction_contract": "construction_contract",
+    "personnel_qualification_review_form": "personnel_qualification_review_form",
+    "entry_permit": "entry_permit",
+    "safety_education_training_record": "safety_education_training_record",
+    "jsa": "jsa",
+    "hse_guidance": "hse_guidance",
+    "hse_plan": "hse_plan",
+    "medical_exam": "medical_exam",
+    "insurance": "insurance",
+    "equipment_inspection": "equipment_inspection",
+    "material_inspection": "material_inspection",
+    "emergency_plan": "emergency_plan",
+    "emergency_drill_plan": "emergency_drill_plan",
+    "emergency_drill_record": "emergency_drill_record",
+    "hse_commitment": "hse_commitment",
+    "all_staff_commitment": "all_staff_commitment",
+    "regulation": "regulation",
+    "commencement_report": "commencement_report",
+    "construction_plan": "construction_plan",
+    "labor_contract": "labor_contract",
+    "training_record": "training_record",
+    "training_material": "training_material",
+    "technical_briefing": "technical_briefing",
+    "exam_record": "exam_record",
+    "contractor_certificate": "contractor_certificate",
+    "access_assessment": "access_assessment",
+    "qualification_review_record": "qualification_review_record",
+    "appointment_letter": "appointment_letter",
+    "qualification_form": "qualification_form",
+    "key_role_form": "key_role_form",
+    "social_security": "social_security",
+    "contract": "construction_contract",
+    "constructioncontract": "construction_contract",
+    "qualification_review_form": "personnel_qualification_review_form",
+    "personnel_qualification": "personnel_qualification_review_form",
+    "personnelqualificationreviewform": "personnel_qualification_review_form",
+    "permit": "entry_permit",
+    "entrypermit": "entry_permit",
+    "training": "safety_education_training_record",
+    "training_records": "safety_education_training_record",
+    "safety_training_record": "safety_education_training_record",
+    "job_safety_analysis": "jsa",
+    "jobsafetyanalysis": "jsa",
+    "hse_instruction": "hse_guidance",
+    "hse_work_guidance": "hse_guidance",
+    "hse_work_plan": "hse_plan",
+    "health_exam": "medical_exam",
+    "medicalexamination": "medical_exam",
+    "work_injury_insurance": "insurance",
+    "equipment_report": "equipment_inspection",
+    "equipment_check": "equipment_inspection",
+    "material_report": "material_inspection",
+    "material_check": "material_inspection",
+    "emergency_response_plan": "emergency_plan",
+    "drill_plan": "emergency_drill_plan",
+    "drill_record": "emergency_drill_record",
+    "hse_promise": "hse_commitment",
+    "all_staff_hse_commitment": "all_staff_commitment",
+    "policy_regulation": "regulation",
+    "start_report": "commencement_report",
+    "organization_plan": "construction_plan",
+    "work_plan": "construction_plan",
+    "certificate": "contractor_certificate",
+    "access_assessment_form": "access_assessment",
+    "qualification_review": "qualification_review_record",
+    "appointment": "appointment_letter",
+    "key_role_review": "key_role_form",
+    "social_insurance": "social_security",
+    "social_security_record": "social_security",
+    "施工合同": "construction_contract",
+    "人员资质报审表": "personnel_qualification_review_form",
+    "资质报审": "personnel_qualification_review_form",
+    "入场许可证": "entry_permit",
+    "作业许可证": "entry_permit",
+    "安全教育培训": "safety_education_training_record",
+    "作业安全分析": "jsa",
+    "作业指导书": "hse_guidance",
+    "操作规程": "hse_guidance",
+    "作业计划书": "hse_plan",
+    "体检": "medical_exam",
+    "保险": "insurance",
+    "机具报验": "equipment_inspection",
+    "设备报验": "equipment_inspection",
+    "材料报验": "material_inspection",
+    "应急预案": "emergency_plan",
+    "应急演练计划": "emergency_drill_plan",
+    "应急演练记录": "emergency_drill_record",
+    "hse承诺书": "hse_commitment",
+    "全员安全承诺书": "all_staff_commitment",
+    "监督管理规定": "regulation",
+    "开工报告": "commencement_report",
+    "施工组织设计": "construction_plan",
+    "劳动合同": "labor_contract",
+    "安全教育记录": "training_record",
+    "培训资料": "training_material",
+    "安全技术交底": "technical_briefing",
+    "考试卷": "exam_record",
+    "合格证": "contractor_certificate",
+    "准入评估表": "access_assessment",
+    "资质审查记录": "qualification_review_record",
+    "任命书": "appointment_letter",
+    "关键岗位人员报审表": "key_role_form",
+    "社保": "social_security"
+  },
+  "pipeline_capabilities": {
+    "large_file_key_page_doc_types": [
+      "construction_plan",
+      "emergency_drill_plan",
+      "emergency_drill_record",
+      "emergency_plan",
+      "equipment_inspection",
+      "hse_guidance",
+      "hse_plan",
+      "insurance",
+      "material_inspection",
+      "medical_exam"
+    ],
+    "supports_incremental_filters": [
+      "files",
+      "doc_types",
+      "only_failed",
+      "only_timeout"
+    ],
+    "supports_two_stage": [
+      "extract",
+      "evaluate"
+    ]
+  },
+  "classification_distribution": {
+    "hse_guidance": 1,
+    "training_record": 1,
+    "all_staff_commitment": 1,
+    "key_role_form": 1,
+    "training_material": 1,
+    "emergency_plan": 1,
+    "construction_plan": 1
+  },
+  "counts": {
+    "unsupported_document": 0,
+    "classification_error": 0,
+    "missing_required_field": 0,
+    "missing_required_field_by_schema": 0
+  },
+  "extraction": {
+    "overall_field_accuracy": 0.0,
+    "by_doc_type": {
+      "hse_guidance": {
+        "file_count": 1,
+        "fields_total": 7,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "training_record": {
+        "file_count": 1,
+        "fields_total": 4,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "all_staff_commitment": {
+        "file_count": 1,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "key_role_form": {
+        "file_count": 1,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "training_material": {
+        "file_count": 1,
+        "fields_total": 4,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "emergency_plan": {
+        "file_count": 1,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      },
+      "construction_plan": {
+        "file_count": 1,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "field_accuracy": 0.0
+      }
+    },
+    "by_key_field": {
+      "approver": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "attendees": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "attendees_signatures": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "auditor": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "author": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "contractor_signature": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "date": {
+        "total": 3,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "emergency_materials": {
+        "total": 2,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "hazards_identified": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "instructor": {
+        "total": 2,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "location": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "locations": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "personnel": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "project_name": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "project_scope": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "signatures": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "suspected_template_residue": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "training_content": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      },
+      "training_date": {
+        "total": 1,
+        "matched": 0,
+        "accuracy": 0.0
+      }
+    },
+    "file_details": [
+      {
+        "file_name": "HSE作业指导书.pdf",
+        "gold_doc_type": "hse_guidance",
+        "actual_doc_type": "hse_guidance",
+        "field_accuracy": 0.0,
+        "fields_total": 7,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "locations",
+            "expected": [
+              "百色",
+              "邕宁",
+              "河池",
+              "黎塘",
+              "玉林"
+            ],
+            "actual": null
+          },
+          {
+            "field": "author",
+            "expected": "彭涛",
+            "actual": null
+          },
+          {
+            "field": "auditor",
+            "expected": "卢海亮",
+            "actual": null
+          },
+          {
+            "field": "approver",
+            "expected": "司艳会",
+            "actual": null
+          },
+          {
+            "field": "date",
+            "expected": "2025年10月18日",
+            "actual": null
+          },
+          {
+            "field": "project_name",
+            "expected": "广西公司2025年巡线便道修建项目(标段二)(华南公司)",
+            "actual": null
+          },
+          {
+            "field": "suspected_template_residue",
+            "expected": [
+              "广西公司2025年巡线便道修建项目(标段二)(西南管道)"
+            ],
+            "actual": null
+          }
+        ],
+        "extraction_errors": []
+      },
+      {
+        "file_name": "作业人员安全教育记录.pdf",
+        "gold_doc_type": "training_record",
+        "actual_doc_type": "training_record",
+        "field_accuracy": 0.0,
+        "fields_total": 4,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "training_content",
+            "expected": "本单位安全生产基本情况及安全生产基本知识等",
+            "actual": "安全教育"
+          },
+          {
+            "field": "instructor",
+            "expected": "张发跃",
+            "actual": null
+          },
+          {
+            "field": "date",
+            "expected": "2025年11月6日",
+            "actual": null
+          },
+          {
+            "field": "attendees",
+            "expected": [
+              "彭涛",
+              "王小宇",
+              "韦明宁",
+              "万元富",
+              "万元龙",
+              "廖文旺",
+              "万介里"
+            ],
+            "actual": null
+          }
+        ],
+        "extraction_errors": []
+      },
+      {
+        "file_name": "全员安全承诺书.pdf",
+        "gold_doc_type": "all_staff_commitment",
+        "actual_doc_type": "all_staff_commitment",
+        "field_accuracy": 0.0,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "signatures",
+            "expected": [
+              "彭涛",
+              "王小宇",
+              "韦明宁",
+              "万元富",
+              "万元龙",
+              "廖文旺",
+              "万介里"
+            ],
+            "actual": null
+          },
+          {
+            "field": "date",
+            "expected": "2025年11月6日",
+            "actual": null
+          }
+        ],
+        "extraction_errors": []
+      },
+      {
+        "file_name": "关键岗位人员报审表.pdf",
+        "gold_doc_type": "key_role_form",
+        "actual_doc_type": "key_role_form",
+        "field_accuracy": 0.0,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "personnel",
+            "expected": [
+              {
+                "name": "卢海亮",
+                "role": "项目经理"
+              },
+              {
+                "name": "司艳会",
+                "role": "技术负责人"
+              },
+              {
+                "name": "赵艳辉",
+                "role": "质量员"
+              },
+              {
+                "name": "笪丽伟",
+                "role": "安全员"
+              }
+            ],
+            "actual": null
+          },
+          {
+            "field": "contractor_signature",
+            "expected": "卢海亮",
+            "actual": null
+          }
+        ],
+        "extraction_errors": []
+      },
+      {
+        "file_name": "安全教育培训资料（施工单位）.pdf",
+        "gold_doc_type": "training_material",
+        "actual_doc_type": "training_material",
+        "field_accuracy": 0.0,
+        "fields_total": 4,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "training_date",
+            "expected": "2025年11月6日",
+            "actual": null
+          },
+          {
+            "field": "location",
+            "expected": "黎塘作业区会议室",
+            "actual": null
+          },
+          {
+            "field": "instructor",
+            "expected": "彭涛",
+            "actual": null
+          },
+          {
+            "field": "attendees_signatures",
+            "expected": [
+              "彭涛",
+              "王小宇",
+              "韦明宁",
+              "万元富",
+              "万元龙",
+              "廖文旺",
+              "万介里"
+            ],
+            "actual": null
+          }
+        ],
+        "extraction_errors": []
+      },
+      {
+        "file_name": "应急预案.pdf",
+        "gold_doc_type": "emergency_plan",
+        "actual_doc_type": "emergency_plan",
+        "field_accuracy": 0.0,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "hazards_identified",
+            "expected": [
+              "人身伤害",
+              "设备故障",
+              "环境污染"
+            ],
+            "actual": [
+              "应急场景风险"
+            ]
+          },
+          {
+            "field": "emergency_materials",
+            "expected": [
+              "退烧药",
+              "碘酊",
+              "云南白药",
+              "创口贴",
+              "温度计"
+            ],
+            "actual": [
+              "碘酊",
+              "云南白药",
+              "创口贴",
+              "温度计"
+            ]
+          }
+        ],
+        "extraction_errors": []
+      },
+      {
+        "file_name": "施工组织设计方案.pdf",
+        "gold_doc_type": "construction_plan",
+        "actual_doc_type": "construction_plan",
+        "field_accuracy": 0.0,
+        "fields_total": 2,
+        "fields_matched": 0,
+        "mismatches": [
+          {
+            "field": "project_scope",
+            "expected": "巡线便道7处",
+            "actual": null
+          },
+          {
+            "field": "emergency_materials",
+            "expected": [
+              "医疗药品"
+            ],
+            "actual": null
+          }
+        ],
+        "extraction_errors": []
+      }
+    ]
+  },
+  "audit_assertion_eval": {
+    "expected_should_hit_count": 5,
+    "expected_should_not_hit_count": 8,
+    "actual_issue_count": 4,
+    "mapped_issue_count": 2,
+    "unmapped_issue_count": 2,
+    "precision": 0.5,
+    "recall": 0.4,
+    "tp": [
+      "issue.commitment.key_roles_missing_signatures",
+      "issue.training.key_roles_missing_training_records"
+    ],
+    "fp_assertion": [],
+    "fn_assertion": [
+      "issue.emergency.plan_content_and_materials_inadequate",
+      "issue.equipment.generator_planned_but_not_reported",
+      "issue.risk.construction_plan_risk_and_emergency_gaps"
+    ],
+    "per_assertion": [
+      {
+        "assertion_key": "issue.commitment.key_roles_missing_signatures",
+        "expected": "should_hit",
+        "predicted_hit": true,
+        "status": "TP"
+      },
+      {
+        "assertion_key": "issue.emergency.plan_content_and_materials_inadequate",
+        "expected": "should_hit",
+        "predicted_hit": false,
+        "status": "FN"
+      },
+      {
+        "assertion_key": "issue.equipment.generator_planned_but_not_reported",
+        "expected": "should_hit",
+        "predicted_hit": false,
+        "status": "FN"
+      },
+      {
+        "assertion_key": "issue.risk.construction_plan_risk_and_emergency_gaps",
+        "expected": "should_hit",
+        "predicted_hit": false,
+        "status": "FN"
+      },
+      {
+        "assertion_key": "issue.training.key_roles_missing_training_records",
+        "expected": "should_hit",
+        "predicted_hit": true,
+        "status": "TP"
+      },
+      {
+        "assertion_key": "non_issue.contract_and_hse_agreement_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.entry_permit_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.key_role_qualification_and_appointment_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.labor_and_social_security_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.medical_exam_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.training_certificate_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.training_or_briefing_docs_existence_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      },
+      {
+        "assertion_key": "non_issue.work_injury_insurance_docs_present",
+        "expected": "should_not_hit",
+        "predicted_hit": false,
+        "status": "TN"
+      }
+    ],
+    "assignments": [
+      {
+        "assertion_key": "issue.commitment.key_roles_missing_signatures",
+        "issue_id": "ISSUE-008",
+        "actual_rule_id": "R-V2-002",
+        "actual_audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+        "score": 0.325,
+        "actual_issue_description": "Personnel qualification form is missing.",
+        "evidence_files": [
+          "关键岗位人员报审表.pdf"
+        ]
+      },
+      {
+        "assertion_key": "issue.training.key_roles_missing_training_records",
+        "issue_id": "ISSUE-001",
+        "actual_rule_id": "R-V2-003",
+        "actual_audit_group": "TRAINING_PERMIT_CLOSURE",
+        "score": 0.2167,
+        "actual_issue_description": "Entry permit is missing.",
+        "evidence_files": [
+          "关键岗位人员报审表.pdf"
+        ]
+      }
+    ],
+    "top_unmapped_actual_issues": [
+      {
+        "rule_id": "R-V2-001",
+        "audit_group": "PROJECT_ADMISSION_LEGAL",
+        "issue_description": "Construction contract is missing.",
+        "evidence_files": [
+          "关键岗位人员报审表.pdf"
+        ]
+      },
+      {
+        "rule_id": "R-V2-004",
+        "audit_group": "TRAINING_PERMIT_CLOSURE",
+        "issue_description": "Training record is missing.",
+        "evidence_files": [
+          "关键岗位人员报审表.pdf"
+        ]
+      }
+    ]
+  },
+  "top_false_positives": [],
+  "top_false_negatives": [
+    "issue.emergency.plan_content_and_materials_inadequate",
+    "issue.equipment.generator_planned_but_not_reported",
+    "issue.risk.construction_plan_risk_and_emergency_gaps"
+  ]
+}

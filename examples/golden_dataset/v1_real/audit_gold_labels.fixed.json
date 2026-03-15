@@ -1,0 +1,361 @@
+{
+  "batch_name": "广西巡线便道项目HSE审查_v1_real",
+  "project_name": "广西公司2025年巡线便道修建项目(标段二)(华南公司)",
+  "source_files": [
+    "HSE作业指导书.pdf",
+    "10、承包商工程项目HSE承诺书.pdf",
+    "1、现场负责人+监护+施工人员（保险）.pdf",
+    "2、现场负责人+监护+施工人员（劳动合同）.pdf",
+    "3.1、王小宇-体检.pdf",
+    "3、现场负责人+监护+施工人员（体检）.pdf",
+    "4.1、人员资质报审表（证书+劳动合同）.pdf",
+    "4.2、社保-9人.pdf",
+    "4.3、保险100万-9人.pdf",
+    "4.4、体检-9人.pdf",
+    "HSE作业计划书.pdf",
+    "《国家管网集团承包商安全监督管理规定》.pdf",
+    "人员任命书.pdf",
+    "人员资质审查记录.pdf",
+    "人员资质报审表（证书+劳动合同）.pdf",
+    "作业人员安全教育记录.pdf",
+    "作业安全分析表.pdf",
+    "入场机具报验表.pdf",
+    "全员安全承诺书.pdf",
+    "关键岗位人员报审表.pdf",
+    "安全技术交底.pdf",
+    "安全教育培训资料（施工单位）.pdf",
+    "安全生产保护费使用计划.pdf",
+    "工程物资、材料进场报验表.pdf",
+    "工程物资、材料进场报验表（2）.pdf",
+    "广西公司2025年巡线便道修建项目(标段二)（华南公司）施工合同.pdf",
+    "应急演练计划.pdf",
+    "应急演练记录.pdf",
+    "应急预案.pdf",
+    "开工报告.pdf",
+    "承包商合格证.pdf",
+    "承包商员工入场许可证.pdf",
+    "承包商施工作业前能力准入评估表.pdf",
+    "施工单位设备、器具进场报审表.pdf",
+    "施工组织设计方案.pdf",
+    "机具操作规程及安全管理.pdf",
+    "现场负责人+监护+施工人员（施工单位考试卷）.pdf"
+  ],
+  "expected_issues": [
+    {
+      "issue_id": "ISSUE-001",
+      "rule_category": "培训/考试/发证闭环",
+      "rule_id": "R-V2-004",
+      "severity": "high",
+      "category": "compliance",
+      "description": "查阅内部培训教育记录及作业人员安全教育记录，缺少关键岗位人员（项目经理、技术负责人、安全员、质量员）的安全教育记录和签字。",
+      "related_files": [
+        "作业人员安全教育记录.pdf",
+        "安全教育培训资料（施工单位）.pdf",
+        "关键岗位人员报审表.pdf"
+      ],
+      "related_persons": [
+        "卢海亮",
+        "司艳会",
+        "赵艳辉",
+        "笪丽伟"
+      ],
+      "related_equipment": [],
+      "evidence_hint": [
+        "人工审查记录第2、19项均指出关键岗位人员培训教育记录缺失。",
+        "extraction中“作业人员安全教育记录.pdf”attendees仅含作业人员名单，未覆盖关键岗位人员。",
+        "extraction中“关键岗位人员报审表.pdf”列出卢海亮、司艳会、赵艳辉、笪丽伟为关键岗位。"
+      ],
+      "source_basis": "both",
+      "status": "should_hit",
+      "assertion_key": "issue.training.key_roles_missing_training_records"
+    },
+    {
+      "issue_id": "ISSUE-002",
+      "rule_category": "应急预案/演练闭环",
+      "rule_id": "R-V2-005",
+      "severity": "high",
+      "category": "compliance",
+      "description": "突发事件应急预案内容针对性不足，存在与施工组织设计/作业指导书内容同质化；应急物资不全，缺少灭火器等火灾处置物资。",
+      "related_files": [
+        "应急预案.pdf",
+        "施工组织设计方案.pdf",
+        "HSE作业指导书.pdf"
+      ],
+      "related_persons": [],
+      "related_equipment": [
+        "灭火器"
+      ],
+      "evidence_hint": [
+        "人工审查记录第3项明确指出应急预案内容复制性强、应急物资不全。",
+        "extraction中“应急预案.pdf”emergency_materials仅为医疗类物资。",
+        "extraction中“安全生产保护费使用计划.pdf”和材料报验表出现灭火器，侧面印证火灾处置物资应纳入应急体系。"
+      ],
+      "source_basis": "both",
+      "status": "should_hit",
+      "assertion_key": "issue.emergency.plan_content_and_materials_inadequate"
+    },
+    {
+      "issue_id": "ISSUE-003",
+      "rule_category": "设备/机具/材料一致性",
+      "rule_id": "R-V2-005",
+      "severity": "high",
+      "category": "consistency",
+      "description": "施工组织设计/合同设备计划存在发电机使用计划，但设备、器具进场报验资料未见发电机进场报审。",
+      "related_files": [
+        "入场机具报验表.pdf",
+        "施工单位设备、器具进场报审表.pdf",
+        "施工组织设计方案.pdf",
+        "广西公司2025年巡线便道修建项目(标段二)（华南公司）施工合同.pdf"
+      ],
+      "related_persons": [],
+      "related_equipment": [
+        "10kw柴油发电机"
+      ],
+      "evidence_hint": [
+        "人工审查记录第5项明确指出无发电机进场报审资料。",
+        "extraction中两份设备报验表equipment均未见发电机。",
+        "extraction中施工合同equipment_plan含“发电机(10kw柴油发电机)”。"
+      ],
+      "source_basis": "both",
+      "status": "should_hit",
+      "assertion_key": "issue.equipment.generator_planned_but_not_reported"
+    },
+    {
+      "issue_id": "ISSUE-004",
+      "rule_category": "人员链路闭环",
+      "rule_id": "R-V2-013",
+      "severity": "medium",
+      "category": "completeness",
+      "description": "入场人员链路资料不完整：审查记录指出无作业人员进场报审资料，仅见内部审查痕迹。",
+      "related_files": [
+        "人员资质审查记录.pdf",
+        "承包商员工入场许可证.pdf"
+      ],
+      "related_persons": [
+        "彭涛",
+        "王小宇",
+        "韦明宁",
+        "万元富",
+        "万介里",
+        "万元龙",
+        "廖文旺"
+      ],
+      "related_equipment": [],
+      "evidence_hint": [
+        "人工审查记录第6项明确指出“无作业人员进场报审资料”。",
+        "当前资料包未见独立“入场人员明细表/作业人员进场报审表”类文件。",
+        "extraction仅能确认内部审查记录与入场许可证名单存在，不足以替代正式报审资料。"
+      ],
+      "source_basis": "manual_excel",
+      "status": "should_hit",
+      "assertion_key": "issue.personnel.entry_review_documents_missing"
+    },
+    {
+      "issue_id": "ISSUE-005",
+      "rule_category": "风险识别与控制措施一致性",
+      "rule_id": "R-V2-005",
+      "severity": "high",
+      "category": "completeness",
+      "description": "施工组织设计风险识别及应急措施存在缺项：危险源识别不完整，应急联络信息与应急措施内容不充分，应急物资配置不足。",
+      "related_files": [
+        "施工组织设计方案.pdf"
+      ],
+      "related_persons": [],
+      "related_equipment": [
+        "灭火器"
+      ],
+      "evidence_hint": [
+        "人工审查记录第11项列明施工组织设计存在风险识别和应急措施缺项。",
+        "extraction中“施工组织设计方案.pdf”emergency_contact_list为空、emergency_materials仅医疗药品。"
+      ],
+      "source_basis": "both",
+      "status": "should_hit",
+      "assertion_key": "issue.risk.construction_plan_risk_and_emergency_gaps"
+    },
+    {
+      "issue_id": "ISSUE-006",
+      "rule_category": "风险识别与控制措施一致性",
+      "rule_id": "R-V2-005",
+      "severity": "high",
+      "category": "consistency",
+      "description": "作业安全分析表（JSA）风险识别与项目实际工况不一致，存在未覆盖关键风险和引入非本项目核心场景风险的问题。",
+      "related_files": [
+        "作业安全分析表.pdf",
+        "HSE作业计划书.pdf"
+      ],
+      "related_persons": [],
+      "related_equipment": [],
+      "evidence_hint": [
+        "人工审查记录第13项指出未识别火灾风险且存在与实际不符内容。",
+        "extraction中“作业安全分析表.pdf”identified_risks出现“便桥搭建”等场景，需与项目实际范围复核。"
+      ],
+      "source_basis": "both",
+      "status": "should_hit",
+      "assertion_key": "issue.risk.jsa_not_aligned_with_actual_scope"
+    },
+    {
+      "issue_id": "ISSUE-007",
+      "rule_category": "合同/准入/承诺类资料完整性",
+      "rule_id": "R-V2-001",
+      "severity": "medium",
+      "category": "completeness",
+      "description": "承包商施工作业前能力准入评估表关键审查项填写不完整，第5项审查结果和签字不全。",
+      "related_files": [
+        "承包商施工作业前能力准入评估表.pdf"
+      ],
+      "related_persons": [],
+      "related_equipment": [],
+      "evidence_hint": [
+        "人工审查记录第17项明确指出第5项未打“√”、审查人未签字。",
+        "该条为表单填签完整性核查，当前extraction未稳定抽取到该细粒度勾选/签字字段。",
+        "因此本条以manual_excel作为主判据。"
+      ],
+      "source_basis": "manual_excel",
+      "status": "should_hit",
+      "assertion_key": "issue.access_assessment.item5_unchecked_unsigned"
+    },
+    {
+      "issue_id": "ISSUE-008",
+      "rule_category": "人员链路闭环",
+      "rule_id": "R-V2-013",
+      "severity": "high",
+      "category": "compliance",
+      "description": "全员安全承诺书缺少关键岗位人员签字，人员链路闭环不完整。",
+      "related_files": [
+        "全员安全承诺书.pdf",
+        "关键岗位人员报审表.pdf"
+      ],
+      "related_persons": [
+        "卢海亮",
+        "司艳会",
+        "赵艳辉",
+        "笪丽伟"
+      ],
+      "related_equipment": [],
+      "evidence_hint": [
+        "人工审查记录第22项明确指出缺少关键岗位人员签字。",
+        "extraction中“全员安全承诺书.pdf”signatures仅含作业人员名单。",
+        "extraction中“关键岗位人员报审表.pdf”列出四名关键岗位人员。"
+      ],
+      "source_basis": "both",
+      "status": "should_hit",
+      "assertion_key": "issue.commitment.key_roles_missing_signatures"
+    },
+    {
+      "issue_id": "ISSUE-009",
+      "rule_category": "应急预案/演练闭环",
+      "rule_id": "R-V2-005",
+      "severity": "high",
+      "category": "compliance",
+      "description": "应急演练计划覆盖与演练记录完整性存在问题，需以人工审查结论作为判定依据。",
+      "related_files": [
+        "应急演练计划.pdf",
+        "应急演练记录.pdf"
+      ],
+      "related_persons": [
+        "彭涛",
+        "王小宇",
+        "韦明宁",
+        "万元富",
+        "万介里",
+        "万元龙",
+        "廖文旺"
+      ],
+      "related_equipment": [],
+      "evidence_hint": [
+        "人工审查记录第23项明确指出演练计划缺项及演练记录不完整。",
+        "该问题以人工审查结论为主证据（manual_excel）。",
+        "extraction对演练主题存在冲突性识别，不能作为本条主判据，仅作辅助参考。"
+      ],
+      "source_basis": "manual_excel",
+      "status": "should_hit",
+      "assertion_key": "issue.emergency.drill_plan_record_incomplete_manual_authoritative"
+    }
+  ],
+  "expected_non_issues": [
+    {
+      "rule_id": "R-V2-004",
+      "description": "仅在“安全技术交底/培训记录资料是否提供”的存在性维度，缺失类规则不应命中；不代表关键岗位培训覆盖率或记录完整性已通过。",
+      "source_basis": "both",
+      "status": "should_not_hit",
+      "assertion_key": "non_issue.training_or_briefing_docs_existence_present"
+    },
+    {
+      "rule_id": "R-V2-002",
+      "description": "“关键人员资质证书及任命文件”资料已提供，未提供该类资质/任命资料的缺失规则不应命中。",
+      "source_basis": "both",
+      "status": "should_not_hit",
+      "assertion_key": "non_issue.key_role_qualification_and_appointment_docs_present"
+    },
+    {
+      "rule_id": "R-V2-002",
+      "description": "“拟派遣人员工伤保险证明（含100万保额）”资料已提供，未提供该类保险资料的缺失规则不应命中。",
+      "source_basis": "both",
+      "status": "should_not_hit",
+      "assertion_key": "non_issue.work_injury_insurance_docs_present"
+    },
+    {
+      "rule_id": "R-V2-002",
+      "description": "“拟派遣人员劳务合同、社会保险建立证明”资料已提供，未提供该类资料的缺失规则不应命中。",
+      "source_basis": "both",
+      "status": "should_not_hit",
+      "assertion_key": "non_issue.labor_and_social_security_docs_present"
+    },
+    {
+      "rule_id": "R-V2-002",
+      "description": "“拟派遣人员体检报告”资料已提供，未提供体检资料的缺失规则不应命中。",
+      "source_basis": "both",
+      "status": "should_not_hit",
+      "assertion_key": "non_issue.medical_exam_docs_present"
+    },
+    {
+      "rule_id": "R-V2-003",
+      "description": "仅在“入厂（场）许可证是否提供”的存在性维度，缺失类规则不应命中；不代表人员链路或填签完整性已通过。",
+      "source_basis": "both",
+      "status": "should_not_hit",
+      "assertion_key": "non_issue.entry_permit_docs_present"
+    },
+    {
+      "rule_id": "R-V2-004",
+      "description": "仅在“承包商培训合格证资料是否提供”的存在性维度，缺失类规则不应命中；不代表培训闭环质量已通过。",
+      "source_basis": "manual_excel",
+      "status": "should_not_hit",
+      "assertion_key": "non_issue.training_certificate_docs_present"
+    },
+    {
+      "rule_id": "R-V2-001",
+      "description": "“合同及HSE协议”资料已提供，未提供合同/HSE协议的缺失规则不应命中。",
+      "source_basis": "both",
+      "status": "should_not_hit",
+      "assertion_key": "non_issue.contract_and_hse_agreement_docs_present"
+    }
+  ],
+  "notes": [
+    "已按extraction_gold_labels.fixed.jsonl中的37个真实PDF文件名重建source_files，修正原稿中的简化文件名与漏前缀问题。",
+    "source_basis枚举已统一为manual_excel/extraction_fact/both，本次仅使用manual_excel与both。",
+    "人工审查CSV与extraction存在冲突时（如应急演练计划主题），按人工审查结论优先并在evidence_hint中标注。",
+    "top-level project_name已统一采用“广西公司2025年巡线便道修建项目(标段二)(华南公司)”，与extraction主事实保持一致。",
+    "未将“文件名列表.txt”纳入source_files，因为本批评测对象限定为真实审查PDF主文件。",
+    "将CSV第2项“内部教育记录缺关键岗位培训”和第19项“作业人员安全培训记录缺关键岗位培训”合并为同一预期问题，避免评测重复计分。",
+    "project_name已对齐extraction事实层最稳定主值“广西公司2025年巡线便道修建项目(标段二)(华南公司)”。"
+  ],
+  "rule_id_mapping": {
+    "RULE-TRAIN-001": "R-V2-004",
+    "RULE-EMERGENCY-001": "R-V2-005",
+    "RULE-EQUIP-001": "R-V2-005",
+    "RULE-PERSON-001": "R-V2-013",
+    "RULE-RISK-001": "R-V2-005",
+    "RULE-RISK-002": "R-V2-005",
+    "RULE-FORM-001": "R-V2-001",
+    "RULE-PERSON-002": "R-V2-013",
+    "RULE-EMERGENCY-002": "R-V2-005",
+    "RULE-TECH-001": "R-V2-004",
+    "RULE-CERT-001": "R-V2-002",
+    "RULE-INSUR-001": "R-V2-002",
+    "RULE-LABOR-001": "R-V2-002",
+    "RULE-MED-001": "R-V2-002",
+    "RULE-PERMIT-001": "R-V2-003",
+    "RULE-TRAIN-002": "R-V2-004",
+    "RULE-CONTRACT-001": "R-V2-001"
+  }
+}

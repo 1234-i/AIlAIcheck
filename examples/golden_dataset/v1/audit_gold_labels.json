@@ -1,0 +1,56 @@
+{
+  "batches": [
+    {
+      "batch_name": "batch_clean_chain",
+      "file_names": [
+        "contract_normal_01.pdf",
+        "qualification_zhang_normal_01.pdf",
+        "permit_zhang_normal_01.pdf",
+        "training_zhang_normal_01.pdf"
+      ],
+      "expected_hit_rules": [
+        "R-V2-022"
+      ]
+    },
+    {
+      "batch_name": "batch_role_mismatch",
+      "file_names": [
+        "contract_normal_02.pdf",
+        "qualification_zhang_problem_02.pdf",
+        "permit_zhang_supervisor_problem_02.pdf",
+        "training_zhang_problem_02.pdf"
+      ],
+      "expected_hit_rules": [
+        "R-V2-022",
+        "R-V2-025"
+      ]
+    },
+    {
+      "batch_name": "batch_missing_training",
+      "file_names": [
+        "contract_problem_03.pdf",
+        "qualification_li_normal_03.pdf",
+        "permit_li_normal_03.pdf"
+      ],
+      "expected_hit_rules": [
+        "R-V2-004",
+        "R-V2-022",
+        "R-V2-026",
+        "R-V2-029"
+      ]
+    },
+    {
+      "batch_name": "batch_chain_gaps_multi",
+      "file_names": [
+        "contract_problem_04.pdf",
+        "permit_wang_normal_05.pdf",
+        "training_li_problem_04.pdf"
+      ],
+      "expected_hit_rules": [
+        "R-V2-002",
+        "R-V2-026",
+        "R-V2-029"
+      ]
+    }
+  ]
+}

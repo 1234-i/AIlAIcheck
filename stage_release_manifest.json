@@ -1,0 +1,45 @@
+{
+  "release_name": "stage-release-v1-real-relay50-flashlite",
+  "version": "v1.0.0-stage",
+  "release_date": "2026-03-15",
+  "default_routing_strategy": {
+    "relay_default_model": "gemini-3.1-flash-lite-preview",
+    "relay_base_url": "https://oneapi.gemiaude.com",
+    "pdf_provider_size_threshold_mb": 50,
+    "official_fallback_enabled": true,
+    "official_parse_model": "gemini-3.1-flash-lite-preview",
+    "official_complex_model": "gemini-3.1-pro-preview",
+    "enable_official_complex_escalation": false
+  },
+  "gold_baselines": {
+    "extraction": "examples/golden_dataset/v1_real/extraction_gold_labels.fixed.v1.jsonl",
+    "audit": "examples/golden_dataset/v1_real/audit_gold_labels.fixed.v1.json"
+  },
+  "passed_full_run_report": "examples/golden_dataset/v1_real/eval_output.gemini.v1_real.full.relay50.round7.json",
+  "metrics_snapshot": {
+    "precision": 0.5625,
+    "recall": 1.0,
+    "tp": 9,
+    "fp": 0,
+    "fn": 0,
+    "tn": 8,
+    "extraction_overall_field_accuracy": 0.205607476635514
+  },
+  "release_gates": {
+    "fp_must_equal": 0,
+    "fn_must_equal": 0,
+    "official_usage_share_max": 0.1,
+    "provider_transport_failure_rate_max": 0.01,
+    "hot_cache_hit_rate_min": 0.95
+  },
+  "known_residual_risks": [
+    "Manual-authoritative assertions rely on narrow bridge conditions and should be revalidated for new domains.",
+    "Cold-cache runtime can vary with relay stability and document complexity."
+  ],
+  "docs": [
+    "docs/stage_default_profile.relay50_flashlite.md",
+    "docs/OPS_RUNBOOK_STAGE_RELEASE.md",
+    "docs/EVALUATION_BASELINE_STAGE_RELEASE.md",
+    "docs/PRODUCTIZATION_CHECKLIST_STAGE_RELEASE.md"
+  ]
+}
