@@ -84,6 +84,8 @@ DOC_TYPE_ALIAS_TO_CANONICAL: dict[str, str] = {
     "作业许可证": "entry_permit",
     "安全教育培训": "safety_education_training_record",
     "作业安全分析": "jsa",
+    "作业安全分析表": "jsa",
+    "安全分析表": "jsa",
     "作业指导书": "hse_guidance",
     "操作规程": "hse_guidance",
     "作业计划书": "hse_plan",

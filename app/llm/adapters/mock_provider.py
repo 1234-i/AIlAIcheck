@@ -44,6 +44,11 @@ def _person_from_filename(file_name: str) -> tuple[str, str]:
 
 
 class MockProvider(LLMProvider):
+    @staticmethod
+    def model_signature(*args, **kwargs) -> str:
+        # Bump this value whenever mock behavior changes to avoid stale cache reuse.
+        return "MockProvider:v2.1.2-cn-heuristic"
+
     async def classify_pdf(self, file_name: str, pdf_bytes: bytes, hints: dict | None = None) -> ClassificationOutput:
         doc_type, primary_group = _classify_by_filename(file_name)
         confidence = 0.91 + (_seed(file_name) % 8) / 1000.0
@@ -90,7 +95,7 @@ class MockProvider(LLMProvider):
                 "id_no": id_no,
                 "role": "scaffolder",
                 "certificate_no": "CERT-ZS-001",
-                "certificate_valid_until": "2025-12-31",
+                "certificate_valid_until": "2030-12-31",
                 "contractor_name": contractor_name,
             }
         elif schema_name == "entry_permit":
@@ -116,10 +121,30 @@ class MockProvider(LLMProvider):
         elif schema_name == "jsa":
             data = {
                 "project_name": project_name,
-                "activity": "Hot work in confined area",
-                "hazards": ["fire", "toxic gas"],
-                "controls": ["gas detector", "fire watch", "permit to work"],
-                "prepared_by": "Safety Engineer Lin",
+                "activity": "现场作业",
+                "hazards": ["作业风险"],
+                "controls": ["落实安全控制措施"],
+                "prepared_by": "安全负责人",
+                "weak_recovered": True,
+                "low_specificity": True,
+            }
+        elif schema_name == "material_inspection":
+            data = {
+                "project_name": "广西公司2025年巡线便道修建项目(标段二)",
+                "materials": [
+                    "便道C20混凝土",
+                    "截水沟C25混凝土",
+                    "模板面积",
+                    "管道桩",
+                    "警示牌",
+                    "安全帽",
+                    "劳保服装",
+                    "劳保手套",
+                    "灭火器",
+                    "急救箱",
+                ],
+                "signed_by": "司艳会",
+                "date": "2025-10-20",
             }
         else:
             data = {

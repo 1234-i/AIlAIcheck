@@ -8,6 +8,8 @@ from uuid import UUID
 
 from sqlmodel import Session, delete, select
 
+from app.extractors.doc_taxonomy import filename_classify
+from app.extractors.schema_registry import get_schema_for_doc_type
 from app.models import EquipmentMaster, ExtractionRecord, FileRecord, PersonMaster, ProjectProfile
 
 ROLE_SYNONYMS = {
@@ -53,6 +55,16 @@ def _source_from_doc_type(doc_type: str) -> str:
     return "other"
 
 
+def _effective_doc_type(file_name: str, doc_type: str | None) -> str:
+    resolved = (doc_type or "unknown").strip() or "unknown"
+    if resolved not in {"unknown", "unsupported_document", "classification_error"}:
+        return resolved
+    inferred_type, _, _, inferred_confidence = filename_classify(file_name)
+    if inferred_type and inferred_confidence >= 0.75:
+        return inferred_type
+    return resolved
+
+
 def _build_person_key(person_name: str | None, id_no: str | None, role: str | None) -> str:
     normalized_id = _normalize_id(id_no)
     if normalized_id:
@@ -83,7 +95,10 @@ def normalize_batch_facts(session: Session, batch_id: str) -> dict[str, Any]:
             "evidence": [],
         }
 
-    records = list(session.exec(select(ExtractionRecord).where(ExtractionRecord.file_id.in_(file_ids))).all())
+    all_records = list(session.exec(select(ExtractionRecord).where(ExtractionRecord.file_id.in_(file_ids))).all())
+    records_by_file: dict[UUID, list[ExtractionRecord]] = {}
+    for rec in all_records:
+        records_by_file.setdefault(rec.file_id, []).append(rec)
 
     project_names: set[str] = set()
     contractor_names: set[str] = set()
@@ -91,13 +106,24 @@ def normalize_batch_facts(session: Session, batch_id: str) -> dict[str, Any]:
     evidence_items: list[dict[str, Any]] = []
     person_accumulator: dict[str, dict[str, Any]] = {}
 
-    for record in records:
-        file_record = file_map.get(record.file_id)
-        if not file_record:
+    for file_record in files:
+        file_records = records_by_file.get(file_record.file_id, [])
+        if not file_records:
             continue
 
+        doc_type = _effective_doc_type(file_record.file_name, file_record.doc_type)
+        expected_schema = get_schema_for_doc_type(doc_type)
+        expected_schema_name = expected_schema["schema_name"] if expected_schema else None
+
+        selected_records = file_records
+        if expected_schema_name:
+            matched = [rec for rec in file_records if rec.schema_name == expected_schema_name]
+            if matched:
+                selected_records = matched
+
+        record = max(selected_records, key=lambda rec: rec.updated_at)
         payload = record.validated_json or record.raw_model_json
-        doc_type = file_record.doc_type or "unknown"
+
         doc_type_index.setdefault(doc_type, []).append(
             {
                 "file_id": str(file_record.file_id),

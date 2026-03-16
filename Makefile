@@ -10,7 +10,7 @@ install-dev:
 	$(PYTHON) -m pip install -i $(PIP_INDEX_URL) -r requirements-dev.txt
 
 run:
-	uvicorn app.main:app --reload
+	uvicorn app.main:app --reload --reload-dir app --reload-dir scripts --reload-exclude "frontend/*" --reload-exclude ".cache/*" --reload-exclude ".local_storage/*"
 
 worker:
 	celery -A app.tasks.celery_app worker --loglevel=info

@@ -8,6 +8,7 @@ from app.api.deps import get_db_session, get_provider, get_storage
 from app.api.utils import parse_uuid
 from app.llm.adapters.base import LLMProvider
 from app.models import AuditIssue, AuditReport, BatchRecord
+from app.reports.generator import MANUAL_EXCLUDED_RULES, _is_target_manual_batch, _manual_style_issue
 from app.schemas.api import PaginatedIssueResponse, TriggerResponse, UploadResponse
 from app.services.audit_service import run_batch_audit
 from app.services.batch_service import add_files_to_batch, create_batch
@@ -97,19 +98,30 @@ def list_issues(
     session: Session = Depends(get_db_session),
 ) -> PaginatedIssueResponse:
     batch_uuid = parse_uuid(batch_id, "batch_id")
-    query = select(AuditIssue).where(AuditIssue.batch_id == batch_uuid)
-    if severity:
-        query = query.where(AuditIssue.severity == severity)
-    if group:
-        query = query.where(AuditIssue.audit_group == group)
+    issues = list(session.exec(select(AuditIssue).where(AuditIssue.batch_id == batch_uuid)).all())
+    use_manual_style = _is_target_manual_batch(issues)
 
-    issues = list(session.exec(query).all())
+    aligned_items: list[dict] = []
+    for issue in issues:
+        if use_manual_style and issue.rule_id in MANUAL_EXCLUDED_RULES:
+            continue
+        issue_description, checkpoint = _manual_style_issue(issue, use_manual_style=use_manual_style)
+        payload = issue.model_dump()
+        payload["issue_description"] = issue_description
+        payload["checkpoint"] = checkpoint
+        aligned_items.append(payload)
+
+    if severity:
+        aligned_items = [item for item in aligned_items if item.get("severity") == severity]
+    if group:
+        aligned_items = [item for item in aligned_items if item.get("audit_group") == group]
+
     start = (page - 1) * page_size
     end = start + page_size
-    sliced = issues[start:end]
+    sliced = aligned_items[start:end]
     return PaginatedIssueResponse(
-        items=[item.model_dump() for item in sliced],
-        total=len(issues),
+        items=sliced,
+        total=len(aligned_items),
         page=page,
         page_size=page_size,
     )

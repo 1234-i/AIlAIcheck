@@ -134,7 +134,14 @@ DOC_TYPE_TAXONOMY: dict[str, dict[str, object]] = {
         "related_groups": [AuditGroup.CROSS_DOCUMENT_CONFLICT_SCAN.value],
     },
     "personnel_qualification_review_form": {
-        "keywords": ["personnel_qualification", "qualification", "资质", "审查"],
+        "keywords": [
+            "personnel_qualification",
+            "qualification",
+            "人员资质报审表",
+            "资质报审表",
+            "资质",
+            "审查",
+        ],
         "primary_group": AuditGroup.PERSONNEL_CONSISTENCY_QUALIFICATION.value,
         "related_groups": [AuditGroup.CROSS_DOCUMENT_CONFLICT_SCAN.value],
     },
@@ -149,7 +156,7 @@ DOC_TYPE_TAXONOMY: dict[str, dict[str, object]] = {
         "related_groups": [AuditGroup.CROSS_DOCUMENT_CONFLICT_SCAN.value],
     },
     "jsa": {
-        "keywords": ["jsa", "job_safety_analysis", "job safety analysis", "风险分析"],
+        "keywords": ["jsa", "job_safety_analysis", "job safety analysis", "作业安全分析表", "作业安全分析", "安全分析表", "风险分析"],
         "primary_group": AuditGroup.HSE_RISK_DOCUMENTS.value,
         "related_groups": [AuditGroup.CROSS_DOCUMENT_CONFLICT_SCAN.value],
     },

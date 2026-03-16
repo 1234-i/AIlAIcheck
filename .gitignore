@@ -1,11 +1,17 @@
 .venv/
 __pycache__/
 *.pyc
+.DS_Store
+.cache/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 .env
 hse_audit.db
+hse_audit_eval_*.db
 test*.db
 .local_storage/
+logs/
 examples/outputs/
+frontend/demo-ui/node_modules/
+frontend/demo-ui/dist/

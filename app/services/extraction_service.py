@@ -517,6 +517,24 @@ def _fallback_extract_from_key_pages(file_name: str, doc_type: str, schema: dict
                 m = re.search(r"(20\d{2}[./-]\d{1,2}[./-]\d{1,2})", compact_text)
                 if m:
                     data["permit_date"] = m.group(1)
+        if has_field("permit_count") and "permit_count" not in data:
+            m = re.search(r"(\d+)\s*人", compact_text)
+            if m:
+                data["permit_count"] = m.group(1)
+        if has_field("permitted_personnel") and "permitted_personnel" not in data:
+            names: list[str] = []
+            for line in text.splitlines():
+                normalized_line = re.sub(r"\s+", "", line.strip())
+                if not normalized_line:
+                    continue
+                # Common row patterns: "1 张三", "2、李四", "姓名:王五"
+                for hit in re.findall(r"(?:^|[：:,，、\s])([\u4e00-\u9fa5]{2,4})(?:$|[，、\s])", normalized_line):
+                    if hit not in {"姓名", "岗位", "工种", "日期"} and hit not in names:
+                        names.append(hit)
+                if len(names) >= 30:
+                    break
+            if names:
+                data["permitted_personnel"] = names[:30]
 
     if doc_type == "jsa":
         lines = [line.strip() for line in text.splitlines() if line.strip()]

@@ -540,14 +540,261 @@
     "rule_name": "JSA risk-control completeness",
     "audit_group": "HSE_RISK_DOCUMENTS",
     "audit_object": "JSA",
-    "checkpoint": "Each hazard has adequate controls",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十五条、第三十六条（作业安全风险清单）",
     "evidence_required": 1,
     "logic_type": "jsa_control_completeness",
     "severity": "MEDIUM",
-    "issue_template": "JSA risk-control mapping is incomplete.",
-    "rectification_template": "Complete control measures for all hazards.",
+    "issue_template": "作业安全分析表中的风险识别与控制措施匹配不完整，或与现场作业场景不一致。",
+    "rectification_template": "请补充并修订作业安全分析表，确保风险识别、控制措施与现场实际一致。",
     "enabled": true,
     "version": "2.0.0",
     "params": {}
+  },
+  {
+    "rule_id": "R-V2-031",
+    "clause_id": "CL-V2-031",
+    "rule_name": "施工组织设计风险识别完整性",
+    "audit_group": "HSE_RISK_DOCUMENTS",
+    "audit_object": "施工组织设计",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十五条、第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "施工组织设计中的风险识别内容缺失或不完整。",
+    "rectification_template": "请补充施工组织设计中的作业风险识别内容。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "construction_plan",
+      "field_name": "risk_items"
+    }
+  },
+  {
+    "rule_id": "R-V2-032",
+    "clause_id": "CL-V2-032",
+    "rule_name": "施工组织设计应急物资完整性",
+    "audit_group": "HSE_RISK_DOCUMENTS",
+    "audit_object": "施工组织设计",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十五条、第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "施工组织设计中的应急物资清单缺失或不完整。",
+    "rectification_template": "请补充施工组织设计中的应急物资及保障措施。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "construction_plan",
+      "field_name": "emergency_materials"
+    }
+  },
+  {
+    "rule_id": "R-V2-033",
+    "clause_id": "CL-V2-033",
+    "rule_name": "施工组织设计设备计划完整性",
+    "audit_group": "EQUIPMENT_TOOLS_MATERIALS",
+    "audit_object": "施工组织设计",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "施工组织设计中的设备机具计划缺失，无法与进场报审信息核对。",
+    "rectification_template": "请补充施工组织设计中的设备机具计划（如发电机等）。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "construction_plan",
+      "field_name": "equipment_plan"
+    }
+  },
+  {
+    "rule_id": "R-V2-034",
+    "clause_id": "CL-V2-034",
+    "rule_name": "应急预案风险识别完整性",
+    "audit_group": "HSE_RISK_DOCUMENTS",
+    "audit_object": "应急预案",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "应急预案缺少针对性风险识别内容，疑似套用模板。",
+    "rectification_template": "请基于现场实际风险补充应急预案内容。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "emergency_plan",
+      "field_name": "hazards_identified"
+    }
+  },
+  {
+    "rule_id": "R-V2-035",
+    "clause_id": "CL-V2-035",
+    "rule_name": "应急预案应急物资完整性",
+    "audit_group": "HSE_RISK_DOCUMENTS",
+    "audit_object": "应急预案",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "应急预案中的应急物资配置不完整。",
+    "rectification_template": "请补充应急物资清单（含消防处置相关物资）。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "emergency_plan",
+      "field_name": "emergency_materials"
+    }
+  },
+  {
+    "rule_id": "R-V2-036",
+    "clause_id": "CL-V2-036",
+    "rule_name": "机具进场报验完整性",
+    "audit_group": "EQUIPMENT_TOOLS_MATERIALS",
+    "audit_object": "机具进场报验",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "机具进场报验资料不完整，设备清单缺失。",
+    "rectification_template": "请补充设备机具进场报验清单并与施工计划保持一致。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "equipment_inspection",
+      "field_name": "equipment"
+    }
+  },
+  {
+    "rule_id": "R-V2-037",
+    "clause_id": "CL-V2-037",
+    "rule_name": "物资材料报验完整性",
+    "audit_group": "EQUIPMENT_TOOLS_MATERIALS",
+    "audit_object": "物资材料报验",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "工程物资材料进场报验资料不完整。",
+    "rectification_template": "请补充物资材料进场报验清单及对应合格证明。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "material_inspection",
+      "field_name": "materials"
+    }
+  },
+  {
+    "rule_id": "R-V2-038",
+    "clause_id": "CL-V2-038",
+    "rule_name": "关键岗位人员报审完整性",
+    "audit_group": "PERSONNEL_CONSISTENCY_QUALIFICATION",
+    "audit_object": "关键岗位人员报审",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "关键岗位人员报审记录不完整。",
+    "rectification_template": "请补充关键岗位人员报审及对应资质材料。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "key_role_form",
+      "field_name": "personnel"
+    }
+  },
+  {
+    "rule_id": "R-V2-039",
+    "clause_id": "CL-V2-039",
+    "rule_name": "内部培训教育记录完整性",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "内部培训教育",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "内部培训教育记录不完整，缺少关键岗位培训佐证。",
+    "rectification_template": "请补充关键岗位人员培训教育记录及签字信息。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "training_material",
+      "field_name": "attendees_signatures"
+    }
+  },
+  {
+    "rule_id": "R-V2-040",
+    "clause_id": "CL-V2-040",
+    "rule_name": "能力准入评估项完整性",
+    "audit_group": "PROJECT_ADMISSION_LEGAL",
+    "audit_object": "能力准入评估",
+    "checkpoint": "《5.4.6.1-P-承包商开工前及过程安全管理流程说明文件》003承包商HSE文件及作业条件审查",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "施工作业前能力准入评估表关键检查项缺失。",
+    "rectification_template": "请补充能力准入评估表关键检查项及签署信息。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "access_assessment",
+      "field_name": "items"
+    }
+  },
+  {
+    "rule_id": "R-V2-041",
+    "clause_id": "CL-V2-041",
+    "rule_name": "全员安全承诺签署完整性",
+    "audit_group": "PROJECT_ADMISSION_LEGAL",
+    "audit_object": "全员安全承诺书",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "全员安全承诺书签署信息不完整。",
+    "rectification_template": "请补充全员安全承诺签署记录。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "all_staff_commitment",
+      "field_name": "signatures"
+    }
+  },
+  {
+    "rule_id": "R-V2-042",
+    "clause_id": "CL-V2-042",
+    "rule_name": "应急演练资料闭环完整性",
+    "audit_group": "HSE_RISK_DOCUMENTS",
+    "audit_object": "应急演练",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "MEDIUM",
+    "issue_template": "应急演练计划或记录缺少关键参与信息。",
+    "rectification_template": "请补充应急演练计划主题与演练记录参与人员信息。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "emergency_drill_record",
+      "field_name": "attendees"
+    }
+  },
+  {
+    "rule_id": "R-V2-043",
+    "clause_id": "CL-V2-043",
+    "rule_name": "入场人员报审资料完整性",
+    "audit_group": "TRAINING_PERMIT_CLOSURE",
+    "audit_object": "入场人员明细与许可",
+    "checkpoint": "《国家管网集团承包商安全监督管理规定》第三十六条（第八项）、第三十七条",
+    "evidence_required": 1,
+    "logic_type": "require_field",
+    "severity": "HIGH",
+    "issue_template": "入场人员明细不完整，缺少作业人员进场报审信息。",
+    "rectification_template": "请补充入场人员明细及对应进场许可报审资料。",
+    "enabled": true,
+    "version": "2.1.0",
+    "params": {
+      "doc_type": "entry_permit",
+      "field_name": "permitted_personnel"
+    }
   }
 ]
